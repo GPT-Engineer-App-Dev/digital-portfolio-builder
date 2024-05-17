@@ -1,4 +1,4 @@
-import { Container, VStack, Heading, Text, Button, Box, Image, HStack, IconButton, Divider } from "@chakra-ui/react";
+import { Container, VStack, Heading, Text, Button, Box, Image, HStack, IconButton, Divider, Flex, Link } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Index = () => {
@@ -60,8 +60,31 @@ const Index = () => {
           <Text>- Customer 3</Text>
         </Box>
       </VStack>
+
+      <Footer />
     </Container>
   );
 };
+
+const Footer = () => (
+  <Box as="footer" width="100%" py={4} bg="gray.800" color="white" mt={8}>
+    <Container maxW="container.md">
+      <Flex justify="space-between" align="center">
+        <Text>&copy; {new Date().getFullYear()} John Doe. All rights reserved.</Text>
+        <HStack spacing={4}>
+          <Link href="https://github.com/yourusername" isExternal>
+            <FaGithub />
+          </Link>
+          <Link href="https://linkedin.com/in/yourusername" isExternal>
+            <FaLinkedin />
+          </Link>
+          <Link href="https://twitter.com/yourusername" isExternal>
+            <FaTwitter />
+          </Link>
+        </HStack>
+      </Flex>
+    </Container>
+  </Box>
+);
 
 export default Index;
